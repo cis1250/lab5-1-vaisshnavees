@@ -33,15 +33,13 @@ def get_sentence():#chaning main to get_sequence
         user_sentence = input("Enter a sentence: ")
     return user_sentence #adding return 
 
-    def calculate_frequencies(sentence):#adding def
-    
-    cleaned_sentence = user_sentence[:-1].lower()
+def calculate_frequencies(sentence):
+    cleaned_sentence = sentence[:-1].lower()
     
     words = cleaned_sentence.split()
     
     word_list = []        
     frequency_list = []   
-    
     
     for word in words:
         # removing puncuation
@@ -53,20 +51,21 @@ def get_sentence():#chaning main to get_sequence
         else:
             word_list.append(clean_word)
             frequency_list.append(1)
-    return word_list, frequency_list #adding return
+    return word_list, frequency_list
 
-    def print_frequencies(words, frequencies):#adding new def
+def print_frequencies(words, frequencies):
     # output
     print("\nWord frequencies:")
-    for i in range(len(word_list)):
-        print(f"{word_list[i]}: {frequency_list[i]}")
-def main():#creatting new main
-    sentence = get_sentence()
-    #get users sentence
-words,frequencies = calculate_frequencies(sentence)
-#calculate word frequencies
+    for i in range(len(words)):
+        print(f"{words[i]}: {frequencies[i]}")
 
-print_frequencies(words, frequencies)#printing results
+def main():
+    sentence = get_sentence()
+    # get users sentence
+    words, frequencies = calculate_frequencies(sentence)
+    # calculate word frequencies
+    print_frequencies(words, frequencies)  # printing results
+
 # Run the program
 if __name__ == "__main__":
     main()
