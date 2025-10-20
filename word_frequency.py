@@ -33,7 +33,7 @@ def get_sentence():#chaning main to get_sequence
         user_sentence = input("Enter a sentence: ")
     return user_sentence #adding return 
 
-    def calculate_frequencies(sentence);#adding def
+    def calculate_frequencies(sentence):#adding def
     
     cleaned_sentence = user_sentence[:-1].lower()
     
